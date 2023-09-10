@@ -1,0 +1,22 @@
+﻿@model PostTabloDto
+@{
+    ViewBag.Title = "Tablo Ekle";
+}
+
+<h1 class="mb-3">Yeni Tablo</h1>
+
+<a asp-action="Index" class="btn btn-secondary">Listeye Geri Dön</a>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Ressam" class="form-label">Ressam</label>
+        <input asp-for="Ressam" class="form-control" type="text"  />
+        <span asp-validation-for="Ressam" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ResminYapilmaTarihi" class="form-label">Tablonun Yapılış Tarihi</label>
+        <input asp-for="ResminYapilmaTarihi" class="form-control" type="date" />
+        <span asp-validation-for="ResminYapilmaTarihi" class="text-danger"></span>
+    </div>
+    <button class="btn btn-primary">Ekle</button>
+</form>

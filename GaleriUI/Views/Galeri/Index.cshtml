@@ -1,0 +1,31 @@
+﻿@model List<Tablo>
+@{
+    ViewBag.Title = "Tablolar";
+}
+
+<a asp-action="Yeni" class="btn btn-success mb-3">Tablo Ekle</a>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ressam</th>
+            <th>Resmin Yapılış Tarihi</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tablo in Model)
+        {
+            <tr>
+                <td>@tablo.Id</td>
+                <td>@tablo.Ressam</td>
+                <td>@tablo.ResminYapilmaTarihi.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Duzenle" asp-route-id="@tablo.Id" class="btn btn-warning">Düzenle</a>
+                    <a asp-action="Sil" asp-route-id="@tablo.Id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+﻿@model Tablo
+@{
+    ViewBag.Title = "Silme Onayı";
+}
+
+<h1 class="mb-3">Silme Onay</h1>
+
+<form method="post">
+    <input asp-for="Id" type="hidden" />
+    <p class="mb-3">Seçilen tabloyu silmek istediğinize emin misiniz ?</p>
+    <button class="btn btn-danger">Evet, Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+</form>
